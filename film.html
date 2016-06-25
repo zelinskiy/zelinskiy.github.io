@@ -1,0 +1,52 @@
+<html>
+
+<head>
+</head>
+<body>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script src="films.js" charset="UTF-8"></script>
+<script>
+
+var timerInterval = 0;
+var isShaking = false;
+
+function getRandomFilm(){
+  return FILMS[Math.floor(Math.random()*FILMS.length)];
+}
+
+function showRandomFilm(){
+  $("#filmNameHolder").html(getRandomFilm());
+}
+
+function startShaking(){
+  stopShaking();
+  timerInterval = setInterval(showRandomFilm, 50);
+}
+
+function stopShaking(){
+  clearInterval(timerInterval);
+}
+
+function toggleShaking(){
+  if(isShaking) stopShaking();
+  else startShaking();
+  $("#rollButton").toggleClass("btn-success");
+  $("#rollButton").toggleClass("btn-danger");
+  isShaking = !isShaking;
+}
+
+
+
+</script>
+<div class="page-header text-center">
+  <h1>Random film selector</h1>
+</div>
+<br/><br/><br/><br/>
+<div class="well center-block text-center" style="font-size:20pt;height:150px;" id="filmNameHolder">Film</div>
+<br/>
+<button id="rollButton" class="btn center-block btn-success" style="width:50vw;height:120px;" onclick="toggleShaking()">ROLL</button>
+</body>
+
+</html>
