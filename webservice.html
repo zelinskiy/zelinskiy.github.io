@@ -12,7 +12,7 @@
 
     <script>
 
-    var hosting = "http://37.229.131.251:7000";
+    var hosting = "http://localhost:5000";
 
     function setHosting() {
         hosting = $("#hostingInput").val();
@@ -23,7 +23,9 @@
         var B = $("#B").val();
         $.get({
             url: hosting+"/api/calculator/add/" + A + "/" + B,
+            crossDomain: true,
             success: function (data) {
+                console.log(data);
                 $("#result").html(data);
             }
         });
@@ -173,7 +175,7 @@
         </p>
         <hr />
         <p>
-            Hosting: <input type="text" id="hostingInput" onchange="setHosting()" value="http://37.229.131.251:7000" />
+            Hosting: <input type="text" id="hostingInput" onchange="setHosting()" value="http://localhost:5000" />
         </p>
         <hr />
         <table border="1">
