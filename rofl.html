@@ -1,0 +1,123 @@
+<html>
+<head>
+
+</head>
+<body>
+<script>
+
+  function main(){
+
+    var n = document.getElementById("n").value;
+    var n2 = document.getElementById("n2").value;
+    var op = document.getElementById("oper").value;
+    var b1 = document.getElementById("b1").value;
+    var b2 = document.getElementById("b2").value;
+    var resOutp = document.getElementById("result");
+    var forwardCode = document.getElementById("forwardCode");
+    var revCode = document.getElementById("revCode");
+    var suppCode = document.getElementById("suppCode");
+    if(!isCorrect(n, b1)){
+      resOutp.innerHTML = "incorrect";
+      return;
+    }
+    var res = parseInt(n, b1)
+    if(oper == "+"){
+      res += n2;
+    }
+    else if(oper == "-"){
+      res -= n2;
+    }
+    else if(oper == "*"){
+      res *= n2;
+    }
+    else if(oper == "/"){
+      res /= n2;
+    }
+    resOutp.innerHTML = res.toString(b2);
+
+    forwardCode.innerHTML = convert(n, b1, 2);
+    revCode.innerHTML = negate(convert(n, b1, 2));
+    suppCode.innerHTML = (parseInt(negate(convert(n, b1, 2)), 2) + 1).toString(2);
+
+  }
+
+
+  function negate(n){
+    var res = [];
+    for(var i = 0; i < n.length; i++){
+      var c = n[i];
+      if(c == "0"){
+        res.push("1");
+      }
+      else if(c == "1"){
+        res.push("0");
+      }
+      else{
+        res.push(c);
+      }
+    }
+    return res.join("");
+    //return parseInt(res.join(""), 2).toString(2);
+  }
+
+  function convert(n, b1, b2){
+    return parseInt(n, b1).toString(b2)
+  }
+
+  function isCorrect(n, b) {
+      var symbols = "0123456789ABCDEF";
+      for (var i = 0; i < n.length; i++) {
+          var index = symbols.indexOf(n[i]);
+          if (index < 0 || index >= b) {
+              return false;
+          }
+      }
+      return true;
+  }
+
+</script>
+
+<center>
+    <br/>
+    <br/>
+    <h1>Convert</h1>
+    <br />
+    <p>
+        NUMBER <input id="n" type="text"/>
+        <select id="oper">
+          <option value="+">+</option>
+          <option value="-" >-</option>
+          <option value="*" selected>*</option>
+          <option value="/">/</option>
+        </select>
+        <input id="n2" type="text" value="1"/>
+    </p>
+    <p>
+      FROM
+      <select id="b1">
+        <option value="2">2</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+        <option value="16">16</option>
+      </select>
+       TO
+       <select id="b2">
+         <option value="2">2</option>
+         <option value="8">8</option>
+         <option value="10">10</option>
+         <option value="16">16</option>
+       </select>
+
+    </p>
+    <button onclick="main()">CONVERT</button>
+    <p>RESULT:</p>
+    <p id="result"></p>
+    <p>FORWARD CODE:</p>
+    <p id="forwardCode"></p>
+    <p>REVERSE CODE:</p>
+    <p id="revCode"></p>
+    <p>SUPPLEMENTARY CODE:</p>
+    <p id="suppCode"></p>
+</center>
+</body>
+</html>
