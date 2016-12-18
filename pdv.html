@@ -1,0 +1,151 @@
+<html>
+<head></head>
+<body>
+
+
+  <select id="selectType">
+    <option value="2">2</option>
+    <option value="5">5</option>
+    <option value="T">T</option>
+    <option value="FB">FB</option>
+    <option value="FL">FL</option>
+    <option value="FOIRL">FOIRL</option>
+    <option value="AUI">AUI</option>
+  </select>
+  <input id="inputLen" type="number"/>
+  <button id="addToSeqButton">Add</button>
+  <button id="remFromSeqButton">Remove</button>
+  <br/><br/><br/>
+  <div id="seq"></div>
+  <br/><br/><br/>
+  <div id="result"></div>
+
+  <script>
+
+    var SEQ = [];
+
+
+    document.getElementById("addToSeqButton").onclick = function(e){
+      SEQ.push({
+        t:document.getElementById("selectType").value,
+        l:parseInt(document.getElementById("inputLen").value),
+      })
+      showSEQ();
+      countPDV(SEQ, true, document.getElementById("result"));
+    };
+    document.getElementById("remFromSeqButton").onclick = function(e){
+      SEQ.pop();
+      showSEQ();
+      countPDV(SEQ, true, document.getElementById("result"));
+    };
+
+    function showSEQ(){
+      document.getElementById("seq").innerHTML = SEQ.reduce(function(acc, x, i){
+        return acc + (i+1) + ") " + x.t + ": " + x.l + "m<br/>";
+      }, "");
+    }
+
+    var TABLE = {
+      "5": {
+        left:11.8,
+        inner:46.5,
+        right:169.5,
+        delay:0.0866,
+        maxlen:500
+      },
+      "2": {
+        left:11.8,
+        inner:46.5,
+        right:169.5,
+        delay:0.1026,
+        maxlen:185
+      },
+      "T": {
+        left:15.3,
+        inner:42,
+        right:165,
+        delay:0.113,
+        maxlen:100
+      },
+      "FB": {
+        left:0,
+        inner:24,
+        right:0,
+        delay:0.1,
+        maxlen:2000
+      },
+      "FL": {
+        left:12.3,
+        inner:33.5,
+        right:156.5,
+        delay:0.1,
+        maxlen:2000
+      },
+      "FOIRL": {
+        left:7.8,
+        inner:29,
+        right:152,
+        delay:0.1,
+        maxlen:1000
+      },
+      "AUI": {
+        left:0,
+        inner:0,
+        right:0,
+        delay:0.1026,
+        maxlen:50000
+      }
+    };
+
+
+
+    function countPDV(seq, verbose, outElem){
+      outElem.innerHTML = "";
+
+      var total = 0;
+
+      var sumlen = seq.reduce(function(acc,x){
+        return acc + x.l;
+      }, 0);
+
+      if(verbose){
+        if(sumlen > 2500 && verbose){
+          outElem.innerHTML += "NETWORK LEN > 2500; LEN = " + sumlen + "<br/>";
+        }
+        else{
+          outElem.innerHTML += "NETWORK LEN < 2500; LEN = " + sumlen + "<br/>";
+        }
+      }
+
+      for(var i = 0; i < seq.length; i++){
+        var x = seq[i];
+        var base = TABLE[x.t].inner;
+        if(i == 0){
+          base = TABLE[x.t].left;
+        }
+        if(i == seq.length - 1){
+          base = TABLE[x.t].right;
+        }
+        var delay = TABLE[x.t].delay;
+        var maxlen = TABLE[x.t].maxlen;
+        var res = base + delay * x.l;
+        if(verbose){
+          if(x.l > maxlen){
+            outElem.innerHTML += "MAXLEN EXCEEDED:<br/>";
+          }
+          outElem.innerHTML += (i+1) + ") " + base + " + " + delay + " * " + x.l + " = " + res + "<br/>";
+        }
+        total += res;
+      }
+
+      outElem.innerHTML += "TOTAL:" + total + "<br/>";
+      return total;
+    }
+
+
+
+
+  </script>
+
+</body>
+</html>
