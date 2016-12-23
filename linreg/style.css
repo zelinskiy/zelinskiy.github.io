@@ -1,0 +1,379 @@
+a {
+  text-decoration: none;
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+body {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  margin-left: 10vw;
+  margin-right: 30vw;
+  margin-bottom: 20vh;
+  background-image: white;
+  color: #002B36;
+}
+
+#sidebar h1 {
+  font-size: 20px;
+  margin: 5px 0 20px 0; }
+
+h1 {
+  font-family: 'Ovo', sans-serif;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  font-weight: 900;
+  font-size: 35px;
+  margin: 15px 0 15px 0;
+  line-height: 54px;
+  clear: left;
+  display: inline-block;
+  width: 100%;
+  max-width: 680px;
+  /* width: auto; */
+  }
+
+h2 {
+  font-weight: 900;
+  font-size: 24px;
+  margin: 20px 0 0px 0;
+  line-height: 30px;
+}
+
+h3 {
+  font-weight: 900;
+  font-size: 18px;
+  margin: 10px 0 0px 0;
+  line-height: 28px;
+  float: none;
+  padding: 0 24px 0 0;
+  width: 100%;
+}
+
+img {
+  float: none;
+  margin: 10px 0;
+  display: block;
+}
+
+#content p.caption {
+  font-style: italic;
+}
+
+li {
+  padding: 5px 0; }
+
+#sidebar {
+  padding: 0 20px 0 0px;
+  border-right: 1px solid rgb(221, 221, 221);
+  text-align: right; }
+
+ol, ul {
+  margin: 10px;
+  display: inline-block;
+}
+
+#content p, #content h1, #content h2, #content ul, #content form, #content label, #content input, #content textarea {
+  float: none; }
+
+#content p {
+  line-height: 26px;
+  font-size: 16px;
+  width: auto;
+  font-weight: 400;
+  color: #555;
+}
+
+#content table {
+  border: 1px solid rgb(221, 221, 221); }
+
+#content tbody {
+  padding: 2px; }
+
+#content td {
+  border: 1px solid rgb(221, 221, 221);
+  padding: 5px; }
+
+form * {
+  clear: both;
+  margin: 5px 0; }
+
+form textarea {
+  width: 500px;
+  height: 200px; }
+
+#notice {
+  width: 100%; }
+
+#sidebar a {
+  color: inherit;
+  text-decoration: inherit; }
+
+#comments {
+  width: 100%;
+  margin-top: 40px;
+  float: left; }
+
+#content #disqus_thread {
+  border-top: 1px solid black;
+  padding-top: 20px;
+  width: 100%; }
+
+.dsq-comment-text {
+  font-size: 16px;
+  line-height: 18px; }
+
+#content #dsq-new-post {
+  background-color: rgb(221, 221, 221);
+  padding: 10px;
+  margin: 0 0 20px 0; }
+
+#content .dsq-options {
+  display: none; }
+
+#content .dsq-global-toolbar-left {
+  display: none; }
+
+#content .dsq-request-user-stats, #content .dsq-request-user-info {
+  display: none; }
+
+#content #disqus_thread .dsq-login-button {
+  float: left; }
+
+#content #dsq-content .dsq-sharing-options {
+  margin: 3px 0 5px 0; }
+
+#fb_like {
+  margin: 5px 0 0 0; }
+
+#content li {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  line-height: 24px;
+  color: #555;
+}
+
+#content ul li {
+  list-style-type: circle;
+}
+.pretty_list li a {
+  color: inherit;
+  text-decoration: inherit; }
+
+ol {
+  list-style-type: decimal;
+  padding-left: 20px; }
+
+#dsq-content #dsq-global-toolbar .dsq-global-toolbar-right {
+  float: left;
+  width: 100%; }
+
+#dsq-content #dsq-global-toolbar .dsq-global-toolbar-right li {
+  clear: none; }
+
+#dsq-global-toolbar {
+  float: left;
+  width: 100%; }
+
+.all_posts a {
+  float: left;
+  width: 100%;
+  font-size: 20px; }
+
+.all_posts .date {
+  font-size: 14px; }
+
+#footer {
+  position: absolute;
+  width: 100px;
+  right: 40px;
+  bottom: 0px;
+  background-color: #EEE;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 16px; }
+
+#right {
+  float: right;
+  width: 20%;
+  border-left: 1px solid rgb(221, 221, 221);
+  padding: 0 10px; }
+
+#right h2 {
+  font-size: 28px; }
+
+em {
+  font-weight: italic; }
+
+strong {
+  font-weight: bold; }
+
+time {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 5px 0;
+  display: block;
+}
+
+time.second {
+  clear: none;
+  margin-left: 10px;
+}
+
+#social {
+  float: left;
+  clear: both;
+  margin: 10px;
+  width: 50px; }
+
+#sections {
+  float: left !important;
+  clear: left;
+  width: auto;
+  padding: 30px 30px 0 0;
+  margin: 0 20px 0 0;
+  border-right: 1px solid rgb(221, 221, 221);
+  max-width: 200px;
+}
+
+#sections h2 {
+  padding: 0 0 5px 0;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  width: 100%;
+  margin: 0 0 20px 0; }
+
+#sections a {
+  color: black;
+  line-height: 24px;
+  font-size: 16px;
+  text-decoration: none;
+  border-bottom: none;
+  -webkit-transition: background-color .2s;
+  -moz-transition: background-color .2s;
+  -ms-transition: background-color .2s;
+  -o-transition: background-color .2s;
+  transition: background-color .2s; }
+
+#sections a:hover {
+  background-color: yellow; }
+
+#content ul#sections li {
+  padding: 5px 7px;
+  margin: 0;
+  list-style-type: none;
+}
+
+#sections li:nth-child(odd)    { background-color:#eee; }
+#sections li:nth-child(even)    { background-color:#fff; }
+
+
+.dsq-brlink {
+  display: none !important; }
+
+#postlist {
+  padding: 0;
+  margin: 0;
+}
+
+#postlist a {
+  font-size: 24px;
+}
+
+a {
+  color: #268BD2;
+  -webkit-transition: background-color .2s;
+  -moz-transition: background-color .2s;
+  -ms-transition: background-color .2s;
+  -o-transition: background-color .2s;
+  transition: background-color .2s; }
+
+a:hover {
+  -webkit-transition: background-color .2s;
+  -moz-transition: background-color .2s;
+  -ms-transition: background-color .2s;
+  -o-transition: background-color .2s;
+  transition: background-color .2s;
+  background-color: yellow; }
+
+#title {
+  color: #6C71C4; }
+
+#container {
+  background-color: white;
+  padding: 40px 25px;
+  margin: 0 auto;
+}
+
+#menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+#menu li {
+  background-color: #DCEAF4;
+  font-size: 20px;
+  padding: 5px 7px;
+  line-height: 20px;
+  -webkit-transition: background-color .2s;
+  -moz-transition: background-color .2s;
+  -ms-transition: background-color .2s;
+  -o-transition: background-color .2s;
+  transition: background-color .2s;
+  float: left;
+}
+
+
+#menu li:hover {
+  background-color: yellow;
+}
+
+#menu li.highlight {
+  background-color: yellow;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: strong;
+}
+
+blockquote, q {
+  background-color: #F7F7F7;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border-left: 5px solid #DDD;
+  display: inline-block;
+}
+
+#postlist li {
+  padding: 5px 0;
+}
+
+pre {
+  display: inline-block;
+}
+
+#content, #container {
+  width: 940px;
+}
+
+#content code {
+  font-family: "Courier New", monospace;
+  font-weight: normal !important;
+  word-wrap: break-word;
+  padding: 3px 5px;
+  margin: 0px 5px;
+  width: auto;
+  max-width: 800px;
+  background-color: #f7f7f7;
+}
+
+#content pre code {
+  padding: 20px;
+  margin: 10px;
+  float: left;
+}
