@@ -7,13 +7,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
 <script src="films.js" charset="UTF-8"></script>
+
+<script src="films2.js" charset="UTF-8"></script>
 <script>
 
 var timerInterval = 0;
 var isShaking = false;
 
+function getFilmsSelection(){
+  var res = ["No film"]
+  var is_bfa = document.getElementById("use_bfa")
+  var is_criterion = document.getElementById("use_criterion")
+  if(is_bfa && is_bfa.checked){
+    res = res.concat(FILMS)
+  }
+  if(is_criterion && is_criterion.checked){
+    res = res.concat(CRITERION_FILMS)
+  }
+  return res
+}
+
 function getRandomFilm(){
-  return FILMS[Math.floor(Math.random()*FILMS.length)];
+  return getFilmsSelection()[Math.floor(Math.random()*FILMS.length)];
 }
 
 function showRandomFilm(){
@@ -43,7 +58,17 @@ function toggleShaking(){
 <div class="page-header text-center">
   <h1>Random film selector</h1>
 </div>
-<br/><br/><br/><br/>
+<br/>
+<center>
+<div>
+  <input type="checkbox" id="use_bfa" name="use_bfa" checked/>
+  <label for="use_bfa">BFA</label>
+  &nbsp;&nbsp;&nbsp;
+  <input type="checkbox" id="use_criterion" name="use_criterion" checked/>
+  <label for="use_criterion">Criterion</label>
+</div>
+</center>
+<br/>
 <div class="well center-block text-center" style="font-size:20pt;height:150px;" id="filmNameHolder">Film</div>
 <br/>
 <button id="rollButton" class="btn center-block btn-success" style="width:50vw;height:120px;" onclick="toggleShaking()">ROLL</button>
