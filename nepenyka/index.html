@@ -1,0 +1,83 @@
+
+<html>
+<head>
+<title>Nepenenoyka composer</title>
+<link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+<body>
+
+<table style="width:100%">
+  <tr>
+    <td style="width:30%">
+      <center><h1>Nepenenoyka composer</h1></center>
+
+      <p>Title: <input id="title" oninput="render()" type="text" value="Te Lucis"/></p>
+      <p>Sequence:</p>
+
+      <p><textarea id="sequence" rows="2" cols="50" oninput="render()">FEFEFEDE.BCDFEGF.DBBABCDE.FEGFFEEF</textarea></p>
+
+      <p>Space: <input id="notes_hspace" type="range" min="0.01" max="1" value="0.8" step="0.01" oninput="render()"/></p>
+      <p>Size: <input id="note_size" type="range" min="0.1" max="1" value="0.3" step="0.01" oninput="render()"/></p>
+      <p>Shift: <input id="hor_shift" type="range" min="-1" max="1" value="0" step="0.01" oninput="render()"/></p>
+      <p>Show lines:<input type="checkbox" id="show_lines" oninput="render()"></p>
+      <p>Show notes:<input type="checkbox" id="show_notes" oninput="render()"></p>
+      <p><input id="print_btn" type="button" value="Print" onclick="printCanvas()"/></p>
+
+
+      <hr/>
+
+      <p>Volume: <input id="volume" type="range" min="0.01" max="1" value="0.3" step="0.01"/></p>
+      <p>Duration: <input id="time" type="range" min="0.05" max="1" value="0.3" step="0.01"/></p>
+      <p><input id="play_btn" type="button" value="Play" onclick="play()"/>
+      </p>
+
+      <hr/>
+    </td>
+    <td style="width:5%"></td>
+    <td style="width:60%">
+      <canvas id="canvas"></canvas>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Text size: <input id="text_size" type="range" min="5" max="30" value="12" step="1" oninput="render()"/>
+      <div id="stanzas">
+        <p><textarea id="stanza_0" class="stanza" rows="4" cols="30" oninput="render()">Te lucis ante terminum,
+rerum Creator, poscimus
+ut pro tua clementia
+sis praesul et custodia.</textarea>
+        <br/>
+        dy: <input id="stanza_dy_0" type="range" min="0" max="1" value="0" step="0.01" oninput="render()"/>
+        <br/>
+        dx: <input id="stanza_dx_0" type="range" min="-1" max="1" value="-0.1" step="0.01" oninput="render()"/>
+        </p>
+      </div>
+
+      <p><input id="add_stanza" type="button" value="Add stanza" onclick="add_stanza()"/></p>
+
+    </td>
+    <td>
+
+    </td>
+    <td>
+      <center><h3>About</h3></center>
+      <p>The nepenenoyka (ÐŸÐµÑ€ÐµÐ¿Ñ‘Ð»Ð¾Ñ‡ÐºÐ°) is a child musical instrument in the form of "Ð³ÑƒÑÐ»Ð¸" (zither/lap harp/plucked psalter). It's cheap, simple, requires no musical background, and is an outstanding instrument for children, seniors, and newbie music lovers. It is also could be used in the Waldorf pedagogics and Orff Schulwerk.</p>
+      <p>Default tuning is G Major.</p>
+      <p>Syntax: 0abcdefgABCDEFG - notes; = - notes connector; - or (space) - small separator; . - dot, big separator, e.g. between lines or stanzas;</p>
+      <p>You could download the page and use it offline</p>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+<script src="index.js"></script>
+
+</body>
+
+</html>
